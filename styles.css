@@ -53,7 +53,7 @@ h1 {
 h2, h2, h2>a {
   font-family: "Poppins", Helvetica, Arial, sans-serif ;
   color: var(--greyish-brown);
-  font-weight: 400;
+  font-weight: 700;
 
   text-decoration: none;
   line-height: 40px;
@@ -86,66 +86,9 @@ p {
 }
 
 /* ============================================================================
-Navbar and navicons (fontawesome)
+Header and Navbar
 ============================================================================ */
 
-.navbar {
-  grid-column: 6/12;
-  display:flex;
-  align-items: flex-end;
-}
-.navbar > ul li > a{
-  display: inline-block;
-  text-decoration: none;
-  padding-right: 10px;
-  font-size: 14px;
-  color: var(--tiffany-blue);
-  transition: color 1s;
-
-}
-.navbar > ul li > a:hover {
-  color: var(--white);
-}
-
-.page_item {
-  display: inline-block;
-}
-
-
-.fa {
-  color: rgb(255, 255, 255);
-}
-
-/* ============================================================================
-Containers and Grid
-============================================================================ */
-
-.container {
-  display: grid;
-  max-width: 45rem;
-  margin-left: auto;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 10px;
-  margin-right: auto;
-}
-
-.blog-body {
-  grid-column:1/span 9;
-
-}
-
-.side-bar {
-  grid-column: 10/span 12;
-  grid-row: 1;
-}
-
-.post {
-
-}
-
-/* ============================================================================
-Layout and Divs
-============================================================================ */
 header {
   position: fixed;
   width: 100%;
@@ -196,20 +139,46 @@ li#menu {
 }
 
 @media screen and (max-width: 496px) {
+  header {
+    position: fixed;
+    width: 100%;
+    background-color: var(--greyish-brown);
+    height: 4em;
+    z-index: 100;
+    grid-template-columns: 50px auto 50px;
+  }
+
+  .logo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    grid-column: 1;
+  }
+
+  navigation {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    grid-column: 2;
+  }
+
 
       .page-title > h1 {
         font-size: 3em;
       }
-      navigation {
-        grid-column: 2/span11;
-      }
+
       navigation > ul li:not(:first-child){
         display: none;
       }
 
-      navigation.responsive > ul li {
+      navigation.responsive > ul li:not(:first-child){
         display: block;
         text-align: center;
+        animation-name: nav-opens;
+        -webkit-animation-name: nav-opens;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        visibility: visible;
       }
       li#menu {
         display: block;
@@ -229,23 +198,18 @@ li#menu {
           background-color: var(--greyish-brown);
           height: 4em;
           min-height: 150px;
-          display: grid;
-          grid-template-columns: repeat(12, 1fr);
-          z-index: 110;
+
+
 
 
       }
 
 }
 
-.hero-image {
-  height: 100%;
-  width: 100%;
-  margin: 0px;
 
-  border-radius: 0px;
-
-}
+/* ============================================================================
+Standard Page Layout
+============================================================================ */
 
 .page {
   min-height: 100vh;
@@ -257,11 +221,9 @@ li#menu {
    margin-left: auto;
    margin-right: auto;
    align-items: center;
-   background-color: rgb(232, 196, 147);
+   background-color: var(--tiffany-blue);
 
  }
-
-
 
 
 .page-title {
@@ -294,34 +256,20 @@ li#menu {
     }
 
 }
-  .primary-sidebar {
-    display: none;
-  }
-  .col-md-3 {
-    display: none;
-  }
-  .container {
-    max-width: 100%;
-  }
-  .col-md-9 {
-    max-width: 95%;
-    position: absolute ;
-    margin: 0px;
-    padding: 0px;
-  }
-  .row {
-    max-width: 100%;
-    margin: 0px;
-    padding: 0px;
-
-  }
-
-}
 
 
 /* ============================================================================
 Pages
 ============================================================================ */
+.hero-image {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+
+  border-radius: 0px;
+
+}
+
 #projects {
     min-height: 100%;
     width: 100%;
@@ -334,20 +282,35 @@ Pages
   justify-content: center;
 }
 
+#writing {
+  background-color: rgb(183, 250, 151);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
 #contact {
   background-color: rgb(164, 142, 247);
   display: flex;
   align-content: center;
   justify-content: center;
 }
-
-
 .content-align {
   width: 60%;
   padding: 35px;
 }
 
+#icon-imgs {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+
+/* ============================================================================
+Alternating Project Pages
+============================================================================ */
 
 .project {
   min-height: 100vh;
@@ -397,9 +360,11 @@ margin: 30px;
     min-height: 100vh;
     width: 100%;
     display: grid;
+    padding-bottom: 20px;
+    padding-top: 20px;
     grid-template-columns: 100%;
-    grid-template-rows: 2;
-    grid-gap: 20px;
+    grid-template-rows: auto auto;
+    grid-gap: 4px;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
@@ -407,19 +372,31 @@ margin: 30px;
   }
 
   .project-l{
-    grid-column: 1;
+  grid-column: 1;
   grid-row: 1;
-  padding: 20px;
-  margin: 30px;
+  padding-top: 5px;
+  padding: 4px;
+
+  margin: 2px;
   }
 
   .project-r {
     grid-column: 1;
     grid-row: 2;
-    padding: 20px;
-    margin: 30px;
+    padding-top: 5px;
+    padding: 4px;
+    margin: 2px;
   }
 
+  .project-r > img {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .project-l > img {
+    display: flex;
+    margin-right: auto;
+  }
   .content-align {
     width: 90%;
     padding: 35px;
@@ -442,9 +419,16 @@ margin: 30px;
      padding: 5px;
    }
 }
+
 /* ============================================================================
 Effects
 ============================================================================ */
+
+@keyframes nav-opens {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+
 .slides { visibility: hidden;}
 .slide-in {
   animation-name: slide-in;
