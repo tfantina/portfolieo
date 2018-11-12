@@ -1,0 +1,680 @@
+/*
+Theme Name: Travis Fantina 2018 Theme
+Author: Travis Fantina
+Author URI: http://www.travisfantina.com
+Description: The Latest and Greatest
+Version: v0.1.0.rc1
+License: GPL2
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+Text Domain: rss-really-simple-style
+
+
+*/
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600|Roboto:700,900');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800');
+
+/* Color palette */
+
+:root {
+  --tiffany-blue: #83ebd9;
+  --red-wine: #90022e;
+  --greyish-brown: #424242;
+  --white: #ffffff;
+}
+
+
+body {
+  background-color: var(--tiffany-blue);
+  color: var(--greyish-brown);
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0px;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+
+/* ============================================================================
+Text and Links
+============================================================================ */
+
+
+h1 {
+  font-family:  "Poppins", Helvetica, Arial, sans-serif ;
+  font-weight: 700;
+  margin: 0px;
+}
+
+h2, h2, h2>a {
+  font-family: "Poppins", Helvetica, Arial, sans-serif ;
+  color: var(--greyish-brown);
+  font-weight: 400;
+
+  text-decoration: none;
+  line-height: 40px;
+  padding: 10px 0;
+  margin: 0px;
+
+}
+
+h2>a:hover {
+  color: var(--red-wine);
+  text-decoration: none;
+}
+
+h3, .h3, h3>a {
+  padding: 10px 0;
+  margin: 0px;
+  font-family: "Poppins", Helvetica, Arial, sans-serif ;
+    font-weight: 400;
+  color: var(--greyish-brown);
+
+  text-decoration: none;
+}
+h3>a:hover {
+  color: var(--red-wine);
+  text-decoration: none;
+}
+
+p {
+  margin: 0px;
+}
+
+/* ============================================================================
+Navbar and navicons (fontawesome)
+============================================================================ */
+
+.navbar {
+  grid-column: 6/12;
+  display:flex;
+  align-items: flex-end;
+}
+.navbar > ul li > a{
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 10px;
+  font-size: 14px;
+  color: var(--tiffany-blue);
+  transition: color 1s;
+
+}
+.navbar > ul li > a:hover {
+  color: var(--white);
+}
+
+.page_item {
+  display: inline-block;
+}
+
+
+.fa {
+  color: rgb(255, 255, 255);
+}
+
+/* ============================================================================
+Containers and Grid
+============================================================================ */
+
+.container {
+  display: grid;
+  max-width: 45rem;
+  margin-left: auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  margin-right: auto;
+}
+
+.blog-body {
+  grid-column:1/span 9;
+
+}
+
+.side-bar {
+  grid-column: 10/span 12;
+  grid-row: 1;
+}
+
+.post {
+
+}
+
+/* ============================================================================
+Layout and Divs
+============================================================================ */
+header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--greyish-brown);
+  height: 4em;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  grid-column: 1/2;
+}
+
+navigation {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  grid-column: 2/12;
+}
+
+
+
+navigation > ul li {
+  display: inline-block;
+  decoration: none;
+  margin-right: 25px;
+}
+
+navigation > ul li > a:link, a:visited {
+  color: var(--white);
+
+  text-decoration: none;
+  font-size: 20px;
+}
+
+navigation > ul li > a:hover {
+  color: var(--tiffany-blue);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+li#menu {
+  display: none;
+}
+
+@media screen and (max-width: 496px) {
+
+      .page-title > h1 {
+        font-size: 3em;
+      }
+      navigation {
+        grid-column: 2/span11;
+      }
+      navigation > ul li:not(:first-child){
+        display: none;
+      }
+
+      navigation.responsive > ul li {
+        display: block;
+        text-align: center;
+      }
+      li#menu {
+        display: block;
+      }
+      navigation > ul li > a:link, a:visited {
+        display: block;
+
+      }
+
+      navigation > ul li > a:hover {
+        display: block;
+      }
+
+      .navStatus-open {
+          position: fixed;
+          width: 100%;
+          background-color: var(--greyish-brown);
+          height: 4em;
+          min-height: 150px;
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          z-index: 110;
+
+
+      }
+
+}
+
+.hero-image {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+
+  border-radius: 0px;
+
+}
+
+.page {
+  min-height: 100vh;
+   width: 100%;
+  /*  display: grid;
+   grid-template-columns: repeat(2,50%);
+   grid-template-rows: repeat(auto-fit, minmax(230px, 1fr));
+   grid-gap: 20px; */
+   margin-left: auto;
+   margin-right: auto;
+   align-items: center;
+   background-color: rgb(232, 196, 147);
+
+ }
+
+
+
+
+.page-title {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -10;
+  background-color: rgb(241, 95, 146);
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-title > h1 {
+  color: var(--white);
+
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 8em;
+  text-shadow: 5px 8px 10px rgb(0, 0, 0);
+
+}
+
+@media screen and (max-width: 858px) {
+    .page-title > h1 {
+      font-size: 3em;
+    }
+
+}
+  .primary-sidebar {
+    display: none;
+  }
+  .col-md-3 {
+    display: none;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .col-md-9 {
+    max-width: 95%;
+    position: absolute ;
+    margin: 0px;
+    padding: 0px;
+  }
+  .row {
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+  }
+
+}
+
+
+/* ============================================================================
+Pages
+============================================================================ */
+#projects {
+    min-height: 100%;
+    width: 100%;
+}
+
+#about {
+  background-color: hsl(316, 83%, 81%);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#contact {
+  background-color: rgb(164, 142, 247);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+
+.content-align {
+  width: 60%;
+  padding: 35px;
+}
+
+
+
+.project {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+  grid-template-rows: repeat(auto-fit, minmax(230px, 1fr));
+  grid-gap: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+
+}
+.project:nth-child(1n) {
+  background-color: var(--tiffany-blue);
+  color: var(--greyish-brown);
+}
+
+.project:nth-child(2n) {
+  background-color: var(--greyish-brown);
+  color: var(--tiffany-blue);
+}
+
+
+.project:nth-of-type(1n) h2 {
+  color: var(--greyish-brown);
+}
+.project:nth-of-type(2n) h2{
+  color: var(--tiffany-blue);
+}
+
+.project-l{
+grid-column: 1;
+padding: 20px;
+margin: 30px;
+}
+
+.project-r {
+  grid-column: 2;
+  padding: 20px;
+  margin: 30px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .project {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 2;
+    grid-gap: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+
+  }
+
+  .project-l{
+    grid-column: 1;
+  grid-row: 1;
+  padding: 20px;
+  margin: 30px;
+  }
+
+  .project-r {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 20px;
+    margin: 30px;
+  }
+
+  .content-align {
+    width: 90%;
+    padding: 35px;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  .project-l {
+    margin: 5px;
+    padding: 0px;
+  }
+  .project-r{
+     margin: 5px;
+     padding:0px;
+   }
+
+   .content-align {
+     width: 100%;
+     padding: 5px;
+   }
+}
+/* ============================================================================
+Effects
+============================================================================ */
+.slides { visibility: hidden;}
+.slide-in {
+  animation-name: slide-in;
+  -webkit-animation-name: slide-in;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  visibility: visible;
+}
+
+@keyframes slide-in {
+  0% { opacity: 0;
+      transform: translateY(70%);
+  }
+  100% { opacity: 1;
+        transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  0% { opacity: 0;
+      -webkit-transform: translateY(70%);
+  }
+  100% { opacity: 1;
+        -webkit-transform: translateY(0%);
+  }
+}
+
+.slide-out {
+  animation-name: slide-out;
+  -webkit-animation-name: slide-out;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  z-index: 10;
+}
+
+@keyframes slide-out {
+  0% { opacity: 1;
+      transform: translateY(0%);
+      display: block;
+      visibility: visible;
+  }
+  100% { opacity: 0;
+        transform: translateY(-70%);
+        display: none;
+        visibility: hidden;
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% { opacity: 1;
+      -webkit-transform: translateY(0%);
+      display: block;
+      visibility: hidden;
+
+  }
+
+  100% { opacity: 0;
+        -webkit-transform: translateY(-70%);
+        display: none;
+        visibility: hidden;
+
+  }
+}
+
+
+
+
+.slide-in-up {
+  animation-name: slide-in-up;
+  -webkit-animation-name: slide-in-up;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  visibility: visible;
+}
+
+@keyframes slide-in-up {
+  0% { opacity: 0;
+      transform: translateY(-70%);
+
+  }
+  100% { opacity: 1;
+        transform: translateY(0%);
+
+  }
+}
+
+@-webkit-keyframes slide-in-up {
+  0% { opacity: 0;
+      -webkit-transform: translateY(-70%);
+
+  }
+  100% { opacity: 1;
+        -webkit-transform: translateY(0%);
+
+  }
+}
+
+.slide-out-up {
+  animation-name: slide-out-up;
+  -webkit-animation-name: slide-out-up;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  z-index: 10;
+}
+
+@keyframes slide-out-up {
+  0% { opacity: 1;
+      transform: translateY(0%);
+      display: block;
+      visibility: visible;
+  }
+  100% { opacity: 0;
+        transform: translateY(70%);
+        display: none;
+        visibility: hidden;
+  }
+}
+
+@-webkit-keyframes slide-out-up {
+  0% { opacity: 1;
+      -webkit-transform: translateY(0%);
+      display: block;
+      visibility: hidden;
+
+  }
+
+  100% { opacity: 0;
+        -webkit-transform: translateY(70%);
+        display: none;
+        visibility: hidden;
+
+  }
+}
+
+
+/* ============================================================================
+Alignment
+============================================================================ */
+.aligncenter, div.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.alignright, div.aligncenter {
+  float: right;
+  margin: 5px, 15px, 15px;
+  max-width: 50%;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px, 15px, 15px;
+  max-width: 50%;
+}
+
+/* ============================================================================
+Images
+============================================================================ */
+.allignnone {
+  margin: 5px, 15px, 15px;
+  max-width: 40em;
+}
+
+img {
+  overflow: hidden;
+  margin: 5px;
+  border-radius: 3px;
+  max-width: 100%;
+  height: auto;
+
+}
+
+a img.alignright {
+  float: right;
+  margin: 5px, 15px, 15px;
+  max-width: 50%;
+  height: auto;
+}
+a img.alignleft {
+  float: left;
+  margin: 5px, 15px, 15px;
+  max-width: 50%;
+  height: auto;
+}
+
+a img.alignnone {
+  margin: 5px, 15px, 15px;
+  max-width: 100%;
+  height: auto;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+/* ============================================================================
+screen reader text (copied straight from WP Codex)
+============================================================================ */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
