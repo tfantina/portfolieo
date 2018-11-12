@@ -7,7 +7,7 @@ function expandNavigation() {
   headerWidth.className === "navStatus" ? headerWidth.className += "-open" : headerWidth.className = "navStatus";
 }
 
-window.load = horizon();
+$(function(){ horizon()} == $(document).ready());
 
 function horizon() {
 
