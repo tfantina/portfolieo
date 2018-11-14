@@ -3,20 +3,29 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script>
+    document.createElement('header');
+    document.createElement('navigation');
+    document.createElement('footer');
+  </script>
+  <![endif]-->
   <title>Portfoleo (Travis Fantina) => {designer and developer} </title>
   <meta name="description" content="The work of Travis Fanitna - front end developer" />
   <link href="" rel="stylesheet"/>
   <link href="styles.css" rel="stylesheet"/>
-  <!-- bad practice to keep this here since it's only needed for the project page -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <script src="scripts.js"></script>
 
 </head>
-<body id="frontpage">
+<body>
   <!-- header -->
   <header class="navStatus" id="navStatus">
-    <div class="logo"><a href="#top"><img src="images/logo-mini.png" style="height: 40px; width: 40px;" /></a></div>
+    <div class="logo"><a href="#top"><img src="images/logo-mini.png" alt="header icon" style="height: 40px; width: 40px;" /></a></div>
     <navigation class="navigation" id="navigation">
       <ul>
         <li id="menu">
@@ -72,7 +81,7 @@
         </p>
       </div>
       <div class="project-r slides"><a href="https://avaliarmeuprofessor.herokuapp.com">
-        <img src="images/work/avalie-meu-professor.png" /></a></div>
+        <img src="images/work/avalie-meu-professor.png" alt="Avalie Meu Professor Screenshot"/></a></div>
 
       </div>
 
@@ -80,7 +89,7 @@
 
 
       <div class="project">
-        <div class="project-l slides"><img src="images/work/wp-themes.png" /></div>
+        <div class="project-l slides"><img src="images/work/wp-themes.png" alt="screenshots of WordPress themes" /></div>
         <div class="project-r">  <h2>WordPress Themes</h2>
           <p>
             Created three themes for WordPress from the ground up: <strong>RSS: Really Simple Style</strong>, an
@@ -130,7 +139,7 @@
 
                       </p>
           </div>
-          <div class="project-r slides"><img src="images/work/transcript-manager.png" /></div>
+          <div class="project-r slides"><img src="images/work/transcript-manager.png" alt="Q&A Transcript Manager" /></div>
         </div>
 
         <div class="project">
@@ -163,10 +172,10 @@
               </ul>
             </div>
 
-            <div class="project-r slides" id="icon-imgs"><span style="font-size: 36px">🔴🔵</span> Bocce image coming soon</div>
+            <div class="project-r slides icon-imgs"><span style="font-size: 36px">🔴🔵</span> Bocce image coming soon</div>
           </div>
           <div class="project">
-            <div class="project-l slides" id="icon-imgs" style="font-size: 125px">
+            <div class="project-l slides icon-imgs" style="font-size: 125px">
 
               <a href="https://github.com/tfantina"><i class="fab fa-github fa-lg"></i></a>
               <a href="https://codepen.io/tfantina"><i class="fab fa-codepen"></i></i></a>
@@ -256,7 +265,7 @@
           <div class="page" id="contact">
             <div class="content-align">
               <p>
-                If you are interested in contacting me please drop me an email contact@travisfantina.com
+                If you are interested in contacting me please drop me an email: contact@travisfantina.com
               </p>
               <p>
                 You can also DM me @tfantina on twitter <i class="fab fa-twitter"></i>
