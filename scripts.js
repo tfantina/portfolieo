@@ -49,31 +49,52 @@ $(document).ready(function(){
 
 
   function scrollDown() {
-
+    let slid = false;
     $(".slides").each(function(){
       let position = $(this).offset().top;
 
       var windowTop = $(window).scrollTop();
-
-      if (position > windowTop + 550 && position < windowTop + 650) {
+      const imgs = document.getElementsByTagName('img');
+    
+     const imgArr = [].slice.call(imgs)
+     while(bounding.top >= bounding.height && bounding.bottom <= window.innerHeight) {
+       slid = true;
+     }
+      if(slid != true) {
+      let img = imgArr.filter((img) => {
+        const bounding = img.getBoundingClientRect();
+        const boundingHeight = bounding.height / 2;
+        if(bounding.top >= bounding.height - 25 &&(bounding.bottom - bounding.height + 25)  <= (window.innerHeight || document.documentElement.clientHeight)) {
+          $(this).addClass("slide-in");
+          $(this).removeClass("slide-in-up slide-out-up slide-out");
+          return;
+        }
+      }
+      })
+    
+      if (position > windowTop + 100 && position < windowTop + 300) {
         $(this).addClass("slide-in")
         $(this).removeClass("slide-in-up slide-out-up slide-out");
         return
-      }
-    })
-
-    $(".slides").each(function(){
-      let position = $(this).offset().top;
-
-      var windowTop = $(window).scrollTop();
-
-      if (position > windowTop - 250 && position < windowTop - 150) {
-        $(this).addClass("slide-out")
+      } else if(position > windowTop - 100 && position < windowTop - 300) {
+        $(this).addClass("slide-out");
         $(this).removeClass("slide-in-up slide-out-up slide-in");
-        return
-
       }
+      img = [];
     })
+
+    // $(".slides").each(function(){
+    //   let position = $(this).offset().top;
+
+    //   var windowTop = $(window).scrollTop();
+
+    //   if (position > windowTop - 100 && position < windowTop - 300) {
+    //     $(this).addClass("slide-out")
+    //     $(this).removeClass("slide-in-up slide-out-up slide-in");
+    //     return
+
+    //   }
+    // })
   }
 
 
