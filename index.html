@@ -15,7 +15,7 @@
   <![endif]-->
   <title>Portfoleo (Travis Fantina) => {designer and developer} </title>
   <meta name="description" content="The work of Travis Fanitna - front end developer" />
-  <link href="" rel="stylesheet" />
+
   <link href="styles.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -46,9 +46,9 @@
 
 
 
-  <div class="page-title" id="top">
+  <div class="page-title" id="top"></div>
 
-
+  <div class="intro-content">
     <div id="name-title">
       <h1>Travis Fantina</h1>
       <p>
@@ -64,24 +64,24 @@
 
 
     <div id="hero-logo">
-      <svg height="400px">
+      <svg height="100vh" viewBox="0 0 300 386">
         <defs>
-        <filter id="shadow">
-          <feDropShadow dx="0.2", dy="0.4", stdDeviation="0.2"/>
-        </filter>
-</defs>
-        <image xlink:href="images/Logo.svg" style="filter:url(#shadow)"></image>
+          <filter id="shadow">
+            <feDropShadow dx="2" dy="4" stdDeviation="5" />
+          </filter>
+        </defs>
+        <use xlink:href="images/Logo.svg#Page-2" y="25%" filter="url(#shadow)"></use>
       </svg>
-        
-        
-      </div>
 
+
+    </div>
 
 
 
   </div>
 
-  <div class="empty" style="height: 100vh; width: 100%;"></div>
+
+  <div class="empty"></div>
 
 
   <!-- header end -->
@@ -263,13 +263,14 @@
   <div class="page" id="about">
     <div class="content-align">
       <h1>About</h1>
-      
+
       <p>
         I've spent over a decade working with HTML, CSS and WordPress, creating websites for myself and family members
-        throughout my teens. After two years of volunteer service I entered university and began teaching myself JavaScript, Ruby, and
+        throughout my teens. After two years of volunteer service I entered university and began teaching myself
+        JavaScript, Ruby, and
         some associated frameworks like Rails and React.
       </p>
-           <p>
+      <p>
         I graduated from Brigham Young University in 2017 with a degree in Business Management from the Marriott School.
         While at school I supplemented my business studies with classes in the MEAN stack, Java, HTML, CSS and VBA.
         <p>
@@ -336,7 +337,7 @@
       </ul>
     </div>
     <div class="copywright">
-      &copy Travis Fantina 2018
+      &copy Travis Fantina <span id="current-year"></span>
     </div>
   </footer>
 </body>

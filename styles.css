@@ -23,6 +23,7 @@ body {
   margin: 0px;
   height: 100vh;
   scroll-behavior: smooth;
+
 }
 
 
@@ -79,7 +80,7 @@ Header and Navbar
 header {
   position: fixed;
   width: 100%;
-  background-color: var(--quicksilver,  #A6A6A8) ;
+  background-color: var(--charleston-green, #272635);
   height: 4em;
   display: -ms-grid;
   display: grid;
@@ -93,7 +94,7 @@ header {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-line-pack: center;
-      align-content: center;
+      align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -145,7 +146,7 @@ li#menu {
   header {
     position: fixed;
     width: 100%;
-   background-color: var(--quicksilver,  #A6A6A8) ;
+   background-color: var(--charleston-green, #272635);
     height: 4em;
     z-index: 100;
     -ms-grid-columns: 50px auto 50px;
@@ -157,7 +158,7 @@ li#menu {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-line-pack: center;
-        align-content: center;
+        align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -239,7 +240,7 @@ Standard Page Layout
    -webkit-box-align: center;
        -ms-flex-align: center;
            align-items: center;
-    color: var(--electric-blue, #8FFAED);
+  color: var(--charleston-green, #272635);
 
  }
 
@@ -248,15 +249,6 @@ Standard Page Layout
   height: 100vh;
   width: 100%;
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-  justify-content: center;
   z-index: -10;
    color: var(--electric-blue, #8FFAED);
 
@@ -265,23 +257,52 @@ Standard Page Layout
   background-repeat: no-repeat;
 }
 
+.intro-content{ 
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+  justify-content: center;
+}
+
 
 #name-title > h1 {
   color: #ffffff;
-  font-size: 6em;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   padding-bottom: 3rem;
   text-shadow: 5px 8px 10px rgb(0, 0, 0);
 }
 
 #name-title {
-  max-width: 50%;
+  max-width: 100%;
   color: var(--charleston-green);
+  padding-bottom: 3em;
 }
 
-@media screen and (max-width: 858px) {
-    .page-title > h1 {
-      font-size: 3em;
+.empty {
+  /* height: 100vh;  */
+  width: 100%;
+}
+
+
+@media screen and (min-width: 956px) {
+    #name-title > h1 {
+      font-size: 6em;
     }
+    
+
+    
+
 
 }
 
@@ -304,7 +325,7 @@ Pages
 }
 
 #about {
-  background-color: hsl(316, 83%, 81%);
+  background-color:var(--sunset-orange, #fe5d52);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -314,7 +335,7 @@ Pages
       -ms-flex-pack: center;
           justify-content: center;
     margin-top: -25px;
-    padding: 15px;
+    padding-top: 15px;
 }
 
 #writing {
@@ -662,25 +683,16 @@ Effects
 Footer
 ============================================================================ */
 footer {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
-  -ms-grid-rows: auto 20px;
-      grid-template-rows: auto 20px;
+ 
   z-index: 100;
-   background-color: var(--quicksilver,  #A6A6A8) ;
+   background-color: var(--charleston-green, #272635) ;
 }
 
 .footer-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 11;
-  grid-column: 1/12;
-  -ms-grid-row: 1;
-  grid-row: 1;
+  
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

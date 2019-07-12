@@ -57,9 +57,7 @@ $(document).ready(function(){
       const imgs = document.getElementsByTagName('img');
     
      const imgArr = [].slice.call(imgs)
-     while(bounding.top >= bounding.height && bounding.bottom <= window.innerHeight) {
-       slid = true;
-     }
+
       if(slid != true) {
       let img = imgArr.filter((img) => {
         const bounding = img.getBoundingClientRect();
@@ -70,7 +68,7 @@ $(document).ready(function(){
           return;
         }
       }
-      })
+      )}
     
       if (position > windowTop + 100 && position < windowTop + 300) {
         $(this).addClass("slide-in")
@@ -129,3 +127,9 @@ $(document).ready(function(){
       }
     })
   }
+
+
+  window.addEventListener('load', () => {
+    const year = new Date().getFullYear();
+     document.getElementById("current-year").innerHTML = "&nbsp;" + year;
+  })
