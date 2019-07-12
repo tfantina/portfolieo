@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -88,7 +88,7 @@
 
   <div id="projects">
     <div class="project">
-      <div class="project-r">
+      <div class="project-l">
         <h2>
           MagicTrackr
         </h2>
@@ -106,10 +106,18 @@
           <li>Sketch App</li>
         </ul>
       </div>
+      <div class="project-r slides">
+        
+          <source src="images/work/MagicTrackr.webp" type="image/webp">
+            <source src="images/work/MagicTrackr.png" type="image/png">
+            <img src="images/work/MagicTrackr.png" alt="MagicTrackr screenshot">
+      
+      </div>
 
     </div>
 
     <div class="project">
+
 
 
       <div class="project-l">
@@ -138,8 +146,11 @@
         </p>
       </div>
       <div class="project-r slides"><a href="https://avaliarmeuprofessor.herokuapp.com">
-          <img src="images/work/avalie-meu-professor.png" id="test-img" alt="Avalie Meu Professor Screenshot" /></a>
-      </div>
+        <picture>
+          <source src="images/work/Avalie-Meu-Professor.webp" type="image/webp">
+            <img src="images/work/avalie-meu-professor.png" alt="Avalie Meu Professor screenshot">
+        </picture></a>
+          </div>
 
     </div>
 
@@ -147,8 +158,13 @@
 
 
     <div class="project">
-      <div class="project-l slides"><img src="images/work/wp-themes.png" alt="screenshots of WordPress themes" /></div>
-      <div class="project-r">
+      <div class="project-l slides">
+               <picture>
+          <source src="images/work/WpThemes.webp" type="image/webp">
+            <img src="images/work/WpThemes.png" alt="WordPress themes screenshot">
+        </picture>
+          </div>
+        <div class="project-r">
         <h2>WordPress Themes</h2>
         <p>
           Created three themes for WordPress from the ground up: <strong>RSS: Really Simple Style</strong>, an
@@ -199,42 +215,45 @@
 
         </p>
       </div>
-      <div class="project-r slides"><img src="images/work/transcript-manager.png" alt="Q&A Transcript Manager" /></div>
-    </div>
+      <div class="project-r slides">
+               <picture>
+          <source src="images/work/Transcript-Manager.webp" type="image/webp">
+            <img src="images/work/transcript-manager.png" alt="Transcript manager screenshot">
+        </picture>
+          </div>
+          </div>
 
-    <div class="project">
+    
+          <div class="project">
       <div class="project-l">
-        <h2>Bocce</h2>
-        <p>In the wake of the negative press some unnamed social networks have been facing I've been working
-          on creating a new kind of open source social network called "Bocce". My goals are modest: I'd like
-          to get a few hundred core users who can provide regular feedback and help me iterate on the design
-          and feature set.
-        </p>
-        <p>Perhaps more than anything else, Bocce is a place where I can dream up crazy new features
-          and build them, learn new Rails patterns and best practices and implement whatever tech into the
-          stack that I want. One such feature is "Titlecased Posts" the first 100 characters of automatically
-          become the title of the post (I'll be implementing a regular expression to make sure that words are
-          not truncated) become the title; however if a post is more like a Tweet or a status update and is less
-          than 100 characters it will be pushed out as such without the long form text box ever appearing.
-        </p>
+        <h2>Star Rider Productions</h2>
         <p>
-          Bocce is still in it's infancy. But as I have more time in the near future and learn more about testing
-          in Rails will be implementing more features in the new year. I'm hoping to implement some really novel
-          features with friendship relations to ensure that your circle stays fall, an elegant front end with React,
-          and messaging capabilities.
+          A very simple webpresence for Star Rider Productions, the creators of Captain Canuck.  It makes 
+          heavy use of CSS Grid displaying a portfolio of dozens of images.  The images are managed by 
+          Contentful the headless CMS and pulled through the Contentful API.
         </p>
-        <p>Timeline: Dec 2017 - Present</p>
         <p>
           Tools:
           <ul>
-            <li>Ruby on Rails</li>
-            <li>JavaScript</li>
-            <li>GitHub</li>
+            <li>HTML & CSS</li>
+            <li>Contentful</li>
+            <li>NPM Build tools (Webpack and Babel)</li>
           </ul>
+        </p>
       </div>
+      <div class="project-r slides">
 
-      <div class="project-r slides icon-imgs"><span style="font-size: 36px">🔴🔵</span> Bocce image coming soon</div>
+               <picture>
+          <source src="images/work/StarRider.webp" type="image/webp">
+            <img src="images/work/StarRider.png" alt="Star Rider screenshot">
+        </picture>
+          
+          </div>
+      </div>
     </div>
+
+ 
+     
     <div class="project">
       <div class="project-l slides icon-imgs" style="font-size: 125px">
 
@@ -329,11 +348,11 @@
   <footer>
     <div class="footer-items">
       <ul>
-        <li><a href="https://twitter.com/tfantina"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="https://github.com/tfantina"><i class="fab fa-github"></i></a></li>
-        <li><a href="https://medium.com/@tfantina"><i class="fab fa-medium-m"></i></a></li>
-        <li><a href="https://www.flickr.com/photos/93949902@N04/"><i class="fab fa-flickr"></i></a></li>
-        <li><a href="https://linkedin.com/in/travisfantina"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://twitter.com/tfantina" aria-label="Twitter link"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://github.com/tfantina" aria-label="GitHub link"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://medium.com/@tfantina" aria-label="Medium link"><i class="fab fa-medium-m"></i></a></li>
+        <li><a href="https://www.flickr.com/photos/93949902@N04/"aria-label="Flickr link"><i class="fab fa-flickr"></i></a></li>
+        <li><a href="https://linkedin.com/in/travisfantina" aria-label="Linked In Link"><i class="fab fa-linkedin"></i></a></li>
       </ul>
     </div>
     <div class="copywright">

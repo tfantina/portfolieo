@@ -1,135 +1,139 @@
-
-
 function expandNavigation() {
   let headerWidth = document.getElementById("navStatus");
   let menuBar = document.getElementById("navigation");
-  menuBar.className === "navigation" ? menuBar.className += " responsive" : menuBar.className = "navigation";
-  headerWidth.className === "navStatus" ? headerWidth.className += "-open" : headerWidth.className = "navStatus";
+  menuBar.className === "navigation"
+    ? (menuBar.className += " responsive")
+    : (menuBar.className = "navigation");
+  headerWidth.className === "navStatus"
+    ? (headerWidth.className += "-open")
+    : (headerWidth.className = "navStatus");
 }
 
-$(function(){ horizon()} == $(document).ready());
-
-function horizon() {
-
-  if(window.location.hash == "#projects") {
-    document.getElementById("projects").style.overflow = "scroll";
-
-  } else {
-    document.getElementById("projects").style.overflow = "hidden";
-
-  }
-}
-
-$(document).ready(function(){
-  $('a').on('click', function(event){
-    if(this.hash !== "") {
+$(document).ready(function() {
+  $("a").on("click", function(event) {
+    if (this.hash !== "") {
       event.preventDefault();
       var hash = this.hash;
 
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top }, 1000, function() {
+      $("html, body").animate(
+        {
+          scrollTop: $(hash).offset().top
+        },
+        1000,
+        function() {
           window.location.hash = hash;
-        });
-
-      }
-    });
+        }
+      );
+    }
   });
+});
 
-  let lastScroll = 0;
-  $(window).scroll(function() {
-    let position = $(this).scrollTop();
-    if(position > lastScroll) {
-      scrollDown();
-      lastScroll = position;
+let lastScroll = 0;
+$(window).scroll(function() {
+  let position = $(this).scrollTop();
+  if (position > lastScroll) {
+    scrollDown();
+    lastScroll = position;
+  } else {
+    scrollUp();
+    lastScroll = position;
+  }
+});
+
+function scrollDown() {
+  const imgs = document.getElementsByClassName("slides");
+
+  const imgArr = [].slice.call(imgs);
+  const images = imgArr.map(img => {
+    const bounding = img.getBoundingClientRect();
+
+    const currentTop = bounding.bottom - bounding.height + window.innerHeight;
+    //returns visable = false if the element is out of view otherwise it will be visible
+    if (bounding.y > window.innerHeight || currentTop <= 0) {
+      return { image: img, visible: false };
     } else {
-      scrollUp();
-      lastScroll = position;
+      return { image: img, visible: true };
     }
   });
 
+  for (i = 0; i <= images.length; i++) {
+    const bounding = images[i].image.getBoundingClientRect();
 
-  function scrollDown() {
-    let slid = false;
-    $(".slides").each(function(){
-      let position = $(this).offset().top;
+    const currentBottom =
+      bounding.bottom - window.innerHeight - bounding.height;
 
-      var windowTop = $(window).scrollTop();
-      const imgs = document.getElementsByTagName('img');
-    
-     const imgArr = [].slice.call(imgs)
+    if (currentBottom <= -100 && bounding.top > -100) {
+      !images[i].image.className.includes("slide-in")
+        ? (images[i].image.className = images[i].image.className + " slide-in")
+        : "";
 
-      if(slid != true) {
-      let img = imgArr.filter((img) => {
-        const bounding = img.getBoundingClientRect();
-        const boundingHeight = bounding.height / 2;
-        if(bounding.top >= bounding.height - 25 &&(bounding.bottom - bounding.height + 25)  <= (window.innerHeight || document.documentElement.clientHeight)) {
-          $(this).addClass("slide-in");
-          $(this).removeClass("slide-in-up slide-out-up slide-out");
-          return;
-        }
-      }
-      )}
-    
-      if (position > windowTop + 100 && position < windowTop + 300) {
-        $(this).addClass("slide-in")
-        $(this).removeClass("slide-in-up slide-out-up slide-out");
-        return
-      } else if(position > windowTop - 100 && position < windowTop - 300) {
-        $(this).addClass("slide-out");
-        $(this).removeClass("slide-in-up slide-out-up slide-in");
-      }
-      img = [];
-    })
-
-    // $(".slides").each(function(){
-    //   let position = $(this).offset().top;
-
-    //   var windowTop = $(window).scrollTop();
-
-    //   if (position > windowTop - 100 && position < windowTop - 300) {
-    //     $(this).addClass("slide-out")
-    //     $(this).removeClass("slide-in-up slide-out-up slide-in");
-    //     return
-
-    //   }
-    // })
+      // img[i].classList.remove("slide-in-up slide-out-up slide-out " );
+    }
+    if (bounding.top <= -100) {
+      !images[i].image.className.includes("slide-out")
+        ? (images[i].image.className = images[i].image.className + " slide-out")
+        : "";
+      images[i].image.classList.remove("slide-in");
+      //img[i].classList.remove("slide-in-up slide-out-up slide-in");
+    }
+    console.log(images[i].image.innerHTML);
+    console.log(images);
+    if (images[i].visible === false) {
+      images[i].image.classList.remove(
+        "slide-in-up&nbsp;slide-out-up&nbsp;slide-out&nbsp;slide-in"
+      );
+    }
   }
+}
 
+function scrollUp() {
+  const imgs = document.getElementsByClassName("slides");
 
+  const imgArr = [].slice.call(imgs);
+  const images = imgArr.map(img => {
+    const bounding = img.getBoundingClientRect();
 
+    const currentTop = bounding.bottom - bounding.height + window.innerHeight;
+    //returns visable = false if the element is out of view otherwise it will be visible
+    if (bounding.y > window.innerHeight || currentTop <= 0) {
+      return { image: img, visible: false };
+    } else {
+      return { image: img, visible: true };
+    }
+  });
+  const img = images.filter(img => {
+    if (img.visible === true) {
+      return img;
+    }
+  });
 
+  for (i = 0; i <= img.length; i++) {
+    console.log(img);
+    const bounding = img[i]["image"].getBoundingClientRect();
+    console.log(bounding);
+    const currentBottom =
+      bounding.bottom - window.innerHeight - bounding.height;
 
-  function scrollUp() {
-
-    $(".slides").each(function(){
-      let position = $(this).offset().top;
-
-      var windowTop = $(window).scrollTop();
-
-      if (position < windowTop + 500 && position > windowTop - 500) {
-
-        $(this).addClass("slide-in-up")
-        $(this).removeClass("slide-in slide-out-up slide-out")
-
-      }
-    })
-
-    $(".slides").each(function(){
-      let position = $(this).offset().top;
-
-      var windowTop = $(window).scrollTop();
-
-      if (position > windowTop + 500  && position < windowTop + 700) {
-
-        $(this).addClass("slide-out-up")
-        $(this).removeClass("slide-in-up slide-in slide-out");
-
-      }
-    })
+    if (currentBottom <= -100 && bounding.top > -100) {
+      !img[i].image.className.includes("slide-in-up")
+        ? (img[i].image.className = img[i].image.className + " slide-in-up")
+        : "";
+    }
+    if (currentBottom >= -100) {
+      !img[i].image.className.includes("slide-out-up")
+        ? (img[i].image.className = img[i].image.className + " slide-out-up")
+        : "";
+      images[i].image.classList.remove("slide-in-up");
+    }
+    if (images[i].visible === false) {
+      images[i].image.classList.remove(
+        "slide-in-up&nbsp;slide-out-up&nbsp;slide-out&nbsp;slide-in"
+      );
+    }
   }
+}
 
-
-  window.addEventListener('load', () => {
-    const year = new Date().getFullYear();
-     document.getElementById("current-year").innerHTML = "&nbsp;" + year;
-  })
+window.addEventListener("load", () => {
+  const year = new Date().getFullYear();
+  document.getElementById("current-year").innerHTML = "&nbsp;" + year;
+});
