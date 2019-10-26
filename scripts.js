@@ -56,7 +56,7 @@ function scrollDown() {
     }
   });
 
-  for (i = 0; i <= images.length; i++) {
+  for (i = 0; i <= images.length - 1; i++) {
     const bounding = images[i].image.getBoundingClientRect();
 
     const currentBottom =
@@ -76,8 +76,7 @@ function scrollDown() {
       images[i].image.classList.remove("slide-in");
       //img[i].classList.remove("slide-in-up slide-out-up slide-in");
     }
-    console.log(images[i].image.innerHTML);
-    console.log(images);
+
     if (images[i].visible === false) {
       images[i].image.classList.remove(
         "slide-in-up&nbsp;slide-out-up&nbsp;slide-out&nbsp;slide-in"
@@ -107,10 +106,9 @@ function scrollUp() {
     }
   });
 
-  for (i = 0; i <= img.length; i++) {
-    console.log(img);
+  for (i = 0; i <= img.length - 1; i++) {
     const bounding = img[i]["image"].getBoundingClientRect();
-    console.log(bounding);
+
     const currentBottom =
       bounding.bottom - window.innerHeight - bounding.height;
 
